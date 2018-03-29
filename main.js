@@ -1,5 +1,11 @@
 console.log('yo!')
 
+// Print to Dom
+
+const printToDom = (domString, divId) => {
+  document.getElementById(divId).innerHTML += domString;
+};
+
 // Dom String Builder
 
 const domStringBuilder = (arrayHere) => {
@@ -10,12 +16,13 @@ const domStringBuilder = (arrayHere) => {
     domString += `</div>`
   });
   printToDom(domString, "container-1")
-}
+};
 
 // XHR Request
 
 function iLoad () {
   const data = JSON.parse(this.responseText);
+  domStringBuilder(data.planets)
 };
 
 function iFail() {
