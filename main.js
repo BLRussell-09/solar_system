@@ -1,5 +1,17 @@
 console.log('yo!')
 
+// Dom String Builder
+
+const domStringBuilder = (arrayHere) => {
+  let domString = '';
+  arrayHere.forEach(element => {
+    domString += `<div class="box-1">`
+    domString += `<h1>${element.name}</h1>`
+    domString += `</div>`
+  });
+  printToDom(domString, "container-1")
+}
+
 // XHR Request
 
 function iLoad () {
