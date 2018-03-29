@@ -1,3 +1,23 @@
 body {
   background-color: dimgray;
 }
+
+#main-header {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .container-1 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.container-1 div {
+  border: 1px #ccc solid;
+  padding: 1em;
+}
+
+.box-1 {
+  background-color: white;
+  flex: 1;
+}
