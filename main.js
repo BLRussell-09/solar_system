@@ -1,5 +1,6 @@
 console.log('yo!')
-
+document.getElementById('submit').addEventListener("click", searchApp)
+let myInput = document.getElementById('input')
 let selectedPlanet = "";
 // Print to Dom
 
@@ -39,7 +40,7 @@ const planetCard = (planetArr) => {
   exButton;
 };
 
-// Show Planets
+// Event Listener
 
 const initHover = () => {
   const planetPic = document.getElementsByClassName('box-1');
@@ -77,6 +78,7 @@ const exButton = (e) => {
   startApp()
 }
 
+
 // Search Bar Lite
 
 const searchBar = (planetArr) => {
@@ -107,6 +109,7 @@ function planetShow() {
   })
 }
 
+
 function iFail() {
   console.log("Something went wrong")
 };
@@ -125,6 +128,27 @@ function startAgain() {
   myRequest.addEventListener("error", iFail);
   myRequest.open("GET", "/planets.json")
   myRequest.send() 
+}
+
+function searchApp() {
+  let myRequest = new XMLHttpRequest;
+  myRequest.addEventListener("load", searchShow);
+  myRequest.addEventListener("error", iFail);
+  myRequest.open("GET", "/planets.json")
+  myRequest.send() 
+
+  function searchShow () 
+  {
+    console.log("1success!")
+    
+    const data = JSON.parse(this.responseText);
+    data.planets.forEach( planet => {
+      if (myInput.value === planet.name) {
+        console.log("2success!")
+        planetCard(planet)
+      }
+    })
+  }
 }
 
 startApp()
