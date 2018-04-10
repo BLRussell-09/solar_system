@@ -1,6 +1,6 @@
 body {
   background-color: dimgray;
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/ce/M82_HST_ACS_2006-14-a-large_web.jpg);
+  background-image: url("/images/back.jpg")
 }
 
 #main-header {
@@ -10,7 +10,7 @@ body {
 input {
   text-align: center;
   display: flex;
-  width: 100%;
+
 }
 
 #main-header {
